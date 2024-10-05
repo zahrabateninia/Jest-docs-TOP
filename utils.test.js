@@ -1,4 +1,4 @@
-const { sum, shoppingList, compileAndroidCode } = require('./sum');
+const { sum, shoppingList, compileAndroidCode } = require('./utils');
 
 test('adds 1 + 2 equals 3', () =>{
     expect(sum(1,2)).toBe(3)
