@@ -1,4 +1,4 @@
-const { sum, shoppingList, compileAndroidCode } = require('./utils');
+const { sum, shoppingList, compileAndroidCode, fetchData } = require('./utils');
 
 test('adds 1 + 2 equals 3', () =>{
     expect(sum(1,2)).toBe(3)
@@ -88,3 +88,33 @@ test('compiling android goes as expected', () => {
     expect(() => compileAndroidCode()).toThrow(/^you are using the wrong JDK$/); // Test fails
     expect(() => compileAndroidCode()).toThrow(/^you are using the wrong JDK!$/); // Test pass
   });
+
+
+// Test for asynchronous code
+ 
+// Promises
+
+test('the data is Mr Peanut Butter', () =>{
+    return fetchData().then(data =>{
+      expect(data).toBe('Mr Peanut Butter')
+    })
+})
+
+// Async/Await
+
+test('the data is Mr Peanut Butter', async () => {
+  const data = await fetchData();
+  expect(data).toBe('Mr Peanut Butter');
+});
+
+// If you expect a promise to be rejected, use the .catch method. Make sure to add expect.assertions
+//  to verify that a certain number of assertions are called. Otherwise, a fulfilled promise would not fail the test.
+
+test('the fetch fails with an error', async () => {
+  expect.assertions(1);  // ensures that exactly one assertion(check) is called during the test.
+  try {
+    await fetchData();
+  } catch (error) {
+    expect(error).toMatch('error');
+  }
+});

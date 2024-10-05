@@ -17,9 +17,18 @@ const shoppingList = [
     throw new Error('you are using the wrong JDK!');
   }
   
+
+  const fetchData = () =>{
+    return new Promise((resolve) =>{
+      setTimeout(()=>{
+          resolve('Mr Peanut Butter')
+      },1000)
+    })
+  }
   
 module.exports = {
     sum,
     shoppingList,
-    compileAndroidCode
+    compileAndroidCode,
+    fetchData
 }
