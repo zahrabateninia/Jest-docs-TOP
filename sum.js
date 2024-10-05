@@ -11,8 +11,15 @@ const shoppingList = [
     'paper towels',
     'milk',
   ];
+
+
+  function compileAndroidCode() {
+    throw new Error('you are using the wrong JDK!');
+  }
+  
   
 module.exports = {
     sum,
-    shoppingList
+    shoppingList,
+    compileAndroidCode
 }
