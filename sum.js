@@ -1,4 +1,18 @@
 function sum(a,b){
     return a + b;
 }
-module.exports= sum;
+
+
+
+const shoppingList = [
+    'diapers',
+    'kleenex',
+    'trash bags',
+    'paper towels',
+    'milk',
+  ];
+  
+module.exports = {
+    sum,
+    shoppingList
+}

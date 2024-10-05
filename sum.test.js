@@ -1,4 +1,4 @@
-const sum = require('./sum')
+const { sum, shoppingList } = require('./sum');
 
 test('adds 1 + 2 equals 3', () =>{
     expect(sum(1,2)).toBe(3)
@@ -66,3 +66,10 @@ test('there is no I in team', () => {
   test('but there is a "stop" in Christoph', () => {
     expect('Christoph').toMatch(/stop/);
   });
+
+
+//  Arrays and Iterables
+
+test('shopping list has milk on it', () =>{
+    expect(shoppingList).toContain('milk')
+})
