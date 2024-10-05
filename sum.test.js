@@ -13,6 +13,7 @@ test("adding positive numbers is not zero", () => {
     }
 })
 
+// Truthiness
 
 test('null', () => {
     const n = null;
@@ -30,4 +31,19 @@ test('null', () => {
     expect(z).not.toBeUndefined();
     expect(z).not.toBeTruthy();
     expect(z).toBeFalsy();
+  });
+
+
+//   Compare Numbers
+
+test('two plus two', () => {
+    const value = 2 + 2;
+    expect(value).toBeGreaterThan(3);
+    expect(value).toBeGreaterThanOrEqual(3.5);
+    expect(value).toBeLessThan(5);
+    expect(value).toBeLessThanOrEqual(4.5);
+  
+    // toBe and toEqual are equivalent for numbers
+    expect(value).toBe(4);
+    expect(value).toEqual(4);
   });
