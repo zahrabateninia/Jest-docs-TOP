@@ -15,19 +15,31 @@
 
 
 const analyzeArray = (arr) => {
-    let result = {}
-    let arrLen = arr.length
+    const arrLen = arr.length
 
-    // Calculate the average of numbers in the array
+    if(arrLen === 0){
+        return {average: 0, min: 0, max:0, length: 0 };
+    }
+
+    // Calculate the sum and initialize min and max 
     let sum = 0
-    arr.forEach(num => {
+    let minElement = arr[0]
+    let maxElement = arr[0]
+
+    for (const num of arr){
         sum += num;
-    })
-    let sumOfArrayElements  = sum / arrLen;
-    
-    // Calculate the min element of the array
-    
+        if (num < minElement) minElement = num;
+        if (num > maxElement) maxElement = num;
+    }
 
+    const average = sum / arrLen;
 
-
+    return {
+        average,
+        min: minElement,
+        max: maxElement,
+        length: arrLen, 
+    }
 }
+
+export { analyzeArray }
